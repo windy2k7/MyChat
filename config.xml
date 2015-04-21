@@ -16,4 +16,10 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true"/>
     </feature>
+    
+    <!-- Plugins -->
+    <gap:plugin name="com.ionic.keyboard" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.console" />
+    
 </widget>

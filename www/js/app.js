@@ -67,7 +67,7 @@ angular.module('mychat', ['ionic', 'firebase', 'angularMoment', 'mychat.controll
             // Set up the various states which the app can be in.
             // Each state's controller can be found in controllers.js
             $stateProvider
-
+                    
                     // State to represent Login View
                     .state('login', {
                         url: "/login",
@@ -103,6 +103,16 @@ angular.module('mychat', ['ionic', 'firebase', 'angularMoment', 'mychat.controll
                     })
 
                     // Each tab has its own nav history stack:
+                    
+                    .state('tab.love', {
+                        url: '/love',
+                        views: {
+                            'tab-love': {
+                                templateUrl: 'templates/love.html',
+                                controller: 'LoveCtrl'
+                            }
+                        }
+                    })
 
                     .state('tab.rooms', {
                         url: '/rooms',

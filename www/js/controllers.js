@@ -1,8 +1,11 @@
 angular.module('mychat.controllers', [])
 
 .controller('LoginCtrl', function ($scope, $ionicModal, $state, $firebaseAuth, $ionicLoading, $rootScope) {
-    console.log('Login Controller Initialized');
-
+    //fixed enter username and password
+    $scope.user = {};
+    $scope.user.email = 'minh.nguyen963@gmail.com';
+    $scope.user.pwdForLogin = 'thipham0512';
+    
     var ref = new Firebase($scope.firebaseUrl);
     var auth = $firebaseAuth(ref);
 
@@ -39,7 +42,7 @@ angular.module('mychat.controllers', [])
     }
 
     $scope.signIn = function (user) {
-
+        
         if (user && user.email && user.pwdForLogin) {
             $ionicLoading.show({
                 template: 'Signing In...'
@@ -105,4 +108,10 @@ angular.module('mychat.controllers', [])
             roomId: roomId
         });
     };
+})
+
+.controller('LoveCtrl', function ($scope, Rooms, Chats, $state) {
+    //console.log("Rooms Controller initialized");
+    mine= $scope;
+    loadLove('loader');
 });
