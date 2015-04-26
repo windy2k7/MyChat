@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.ionicfirebase121384" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ionic-firebase</name>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+    xmlns:gap       = "http://phonegap.com/ns/1.0"
+    xmlns:android   = "http://schemas.android.com/apk/res/android"
+    id              = "com.lumberg.greeeaaat"
+    version         = "1.0.0">
+    <name>MineChat</name>
     <description>
-        An Ionic Framework and Cordova project.
+        For chatting
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-        Ionic Framework Team
+    <author email="minh.nguyen963@gmail.com" href="http://ionicframework.com/">
+        Mine Ngo
     </author>
     <content src="index.html"/>
     <access origin="*"/>
-    <preference name="webviewbounce" value="false"/>
-    <preference name="UIWebViewBounce" value="false"/>
-    <preference name="DisallowOverscroll" value="true"/>
-    <preference name="BackupWebStorage" value="none"/>
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true"/>
     </feature>
