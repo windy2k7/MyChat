@@ -16,9 +16,6 @@
       This allows your app to load assets from all *.phongap.com domains
     -->
     <access origin="http://phonegap.com" subdomains="true" />
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" onload="true"/>
-    </feature>
     
     <!-- Plugins -->
     <gap:plugin name="com.ionic.keyboard" />
