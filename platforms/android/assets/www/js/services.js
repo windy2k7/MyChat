@@ -43,7 +43,7 @@ angular.module('mychat.services', ['firebase'])
         selectRoom: function (roomId) {
             console.log("selecting the room with id: " + roomId);
             selectedRoomId = roomId;
-            if (!isNaN(roomId)) {
+            if (roomId != null && roomId.trim() != "") {
                 chats = $firebase(ref.child('rooms').child(selectedRoomId).child('chats')).$asArray();
             }
         },
@@ -79,5 +79,5 @@ angular.module('mychat.services', ['firebase'])
             // Simple index lookup
             return rooms.$getRecord(roomId);
         }
-    }
+    };
 });

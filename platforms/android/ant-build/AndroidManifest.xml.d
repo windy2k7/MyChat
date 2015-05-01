@@ -1,2 +1,2 @@
-C:\Users\MineNgo\MyChat\platforms\android\ant-build\AndroidManifest.xml : \
-C:\Users\MineNgo\MyChat\platforms\android\AndroidManifest.xml \
+e:\MineNgo\MineChat-project\MineChat\platforms\android\ant-build\AndroidManifest.xml : \
+e:\MineNgo\MineChat-project\MineChat\platforms\android\AndroidManifest.xml \

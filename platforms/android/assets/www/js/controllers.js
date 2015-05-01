@@ -1,8 +1,11 @@
 angular.module('mychat.controllers', [])
 
 .controller('LoginCtrl', function ($scope, $ionicModal, $state, $firebaseAuth, $ionicLoading, $rootScope) {
-    //console.log('Login Controller Initialized');
-
+    //fixed enter username and password
+    $scope.user = {};
+    $scope.user.email = 'minh.nguyen963@gmail.com';
+    $scope.user.pwdForLogin = 'thipham0512';
+    
     var ref = new Firebase($scope.firebaseUrl);
     var auth = $firebaseAuth(ref);
 
@@ -13,7 +16,7 @@ angular.module('mychat.controllers', [])
     });
 
     $scope.createUser = function (user) {
-        console.log("Create User Function called");
+        //console.log("Create User Function called");
         if (user && user.email && user.password && user.displayname) {
             $ionicLoading.show({
                 template: 'Signing Up...'
@@ -39,7 +42,7 @@ angular.module('mychat.controllers', [])
     }
 
     $scope.signIn = function (user) {
-
+        
         if (user && user.email && user.pwdForLogin) {
             $ionicLoading.show({
                 template: 'Signing In...'
@@ -48,7 +51,7 @@ angular.module('mychat.controllers', [])
                 email: user.email,
                 password: user.pwdForLogin
             }).then(function (authData) {
-                console.log("Logged in as:" + authData.uid);
+                //console.log("Logged in as:" + authData.uid);
                 ref.child("users").child(authData.uid).once('value', function (snapshot) {
                     var val = snapshot.val();
                     // To Update AngularJS $scope either use $apply or $timeout
@@ -69,7 +72,7 @@ angular.module('mychat.controllers', [])
 
 .controller('ChatCtrl', function ($scope, Chats, $state) {
     //console.log("Chat Controller initialized");
-
+    mine = $scope;
     $scope.IM = {
         textMessage: ""
     };
@@ -88,20 +91,27 @@ angular.module('mychat.controllers', [])
         console.log(msg);
         Chats.send($scope.displayName, msg);
         $scope.IM.textMessage = "";
-    }
+    };
 
     $scope.remove = function (chat) {
         Chats.remove(chat);
-    }
+    };
 })
 
 .controller('RoomsCtrl', function ($scope, Rooms, Chats, $state) {
     //console.log("Rooms Controller initialized");
+    mine= $scope;
     $scope.rooms = Rooms.all();
 
     $scope.openChatRoom = function (roomId) {
         $state.go('tab.chat', {
             roomId: roomId
         });
-    }
+    };
+})
+
+.controller('LoveCtrl', function ($scope, Rooms, Chats, $state) {
+    //console.log("Rooms Controller initialized");
+    mine= $scope;
+    loadLove('loader');
 });
